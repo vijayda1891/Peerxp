@@ -12,13 +12,21 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <% if current_user %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Login', new_user_session_path %>
-      <%= link_to 'Register', new_user_registration_path %>
-    <% end %>
+    <div class="heading_class">
+      <div class="row">
+        <div class="col-md-8">
+        <h1><b>PeerXp</b></h1>
+      </div>
+      <div class="col-md-4 button_class">
+        <% if current_user %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-secondary pull-right"  %>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "btn btn-secondary pull-right" %>
+          <%= link_to 'Register', new_user_registration_path, class: "btn btn-primary pull-right" %>
+        <% end %>
+      </div>
+      </div>
+    </div>
 
     <%= yield %>
 

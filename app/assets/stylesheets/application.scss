@@ -1,5 +1,6 @@
  @import "bootstrap";
  @import "font-awesome";
+ @import "bootstrap-datepicker";
  /*
  *= require jquery-ui
  *= require bootstrap-datepicker
@@ -43,4 +44,18 @@
 
 ul.task_comments li {
 	list-style-type: circle;
+}
+
+.heading_class {
+	text-align: left;
+	background: #a1d0ac;
+	padding: 20px;
+}
+
+.button_class a {
+	margin-right: 10px;
+}
+
+.add_task{
+	margin-top: 10px;
 }

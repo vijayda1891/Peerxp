@@ -1,6 +1,6 @@
 <% if current_user %>
 	<div class="col-md-12">
-		<%= link_to 'Add Project', add_project_path, class: "btn btn-primary pull-right", remote: :true %>
+		<%= link_to 'Add Project', add_project_path, class: "btn btn-primary pull-right add_task", remote: :true %>
 		<h1> PROJECTS LIST </h1>
 	</div>
 	<hr>
@@ -18,5 +18,5 @@
 	</div>
 	<% end %>
 <% else %>
-	<h1>Please Login to take a Look at your Current Projects</h1>
+	<h3>Please Login to take a Look at your Current Projects</h3>
 <% end %>
