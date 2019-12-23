@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   post '/update_task', to: 'tasks#update', as: :update_task
   delete '/delete_task', to: 'tasks#destroy', as: :delete_task
 
+  # routes for comments
+  get '/add_comment', to: 'comments#new', as: :add_comment
+  post '/create_comment', to: 'comments#create', as: :create_comment
+  delete '/delete_comment', to: 'comments#destroy', as: :delete_comment
+
 end

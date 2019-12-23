@@ -2,11 +2,27 @@
 		<div class="pro_list">
 			<ul>
 				<li>
-					<%= task.name.capitalize %>
+					<%= link_to task.name.capitalize, add_comment_path(id: task.id), remote: true %> | Priority: <%= task.priority %>
 					<%= link_to fa_icon('trash'), delete_task_path(id: task.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" %>
 					<%= link_to fa_icon('pencil-square-o'), edit_tasks_path(id: task.id), class: "pull-right custom_icon", remote: :true %>
-					<%= link_to fa_icon('file-text'), toggle_status_path(task), class: "pull-right custom_icon", style: task_status_color(task) %>
+					<%= link_to fa_icon('file-text'), toggle_status_path(task), class: "pull-right custom_icon", style: task_status_color(task), "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Change Status" %>
+					<hr>
+					<ul class="">
+						<h6><b>Task Comments</b></h6>
+						<li>
+							<% task.comments.each do |com|%>
+								<%= com.comment %>
+								<%= link_to fa_icon('trash'), delete_comment_path(id: com.id), method: :delete, data: { confirm: 'Are you sure?' } %><br />
+							<% end %>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $('[data-toggle="tooltip"]').tooltip(); 
+		});
+	</script>

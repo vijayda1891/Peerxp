@@ -1,0 +1,4 @@
+var content = "<%= escape_javascript(render("comment")) %>";
+var container = $('#new-main-lightbox-container');
+container.find('.modal-content').html(content);
+container.modal({});
