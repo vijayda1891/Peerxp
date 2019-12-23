@@ -1,0 +1,12 @@
+	<div class="col-md-6">
+		<div class="pro_list">
+			<ul>
+				<li>
+					<%= task.name.capitalize %>
+					<%= link_to fa_icon('trash'), delete_task_path(id: task.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" %>
+					<%= link_to fa_icon('pencil-square-o'), edit_tasks_path(id: task.id), class: "pull-right custom_icon", remote: :true %>
+					<%= link_to fa_icon('file-text'), toggle_status_path(task), class: "pull-right custom_icon", style: task_status_color(task) %>
+				</li>
+			</ul>
+		</div>
+	</div>

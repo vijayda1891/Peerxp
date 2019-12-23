@@ -1,0 +1,13 @@
+<%= form_for(@project, url: @project.new_record? ? create_project_path : update_project_path(id: project.id), validate: true, method: 'POST', :html => {:class => "form-horizontal", :autocomplete => "off", remote: true}) do |f| %>
+<div class="project_form">
+	<div class="form-group">
+		<center><b><%= f.label :name %></b></center>
+		<%= f.text_field :name, class: "form-control" %>
+	</div>
+	<div class="actions">
+	    <center><%= f.submit "Add/Edit", class: "btn btn-primary" %></center>
+	</div>
+</div>
+<% end %>
+
+

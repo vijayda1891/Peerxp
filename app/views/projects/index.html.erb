@@ -1,0 +1,22 @@
+<% if current_user %>
+	<div class="col-md-12">
+		<%= link_to 'Add Project', add_project_path, class: "btn btn-primary pull-right", remote: :true %>
+		<h1> PROJECTS LIST </h1>
+	</div>
+	<hr>
+	<% @projects.each do |pro| %>
+	<div class="col-md-6">
+		<div class="pro_list">
+			<ul class="">
+				<li>
+					<strong><%= link_to pro.name.capitalize, get_tasks_path(id: pro.id) %></strong>
+	          		<%= link_to fa_icon('trash'), delete_project_path(id: pro.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "pull-right" %>
+					<%= link_to fa_icon('pencil-square-o'), edit_project_path(pro.id), class: "pull-right custom_icon", remote: :true %>
+          		</li>
+			</ul>
+		</div>
+	</div>
+	<% end %>
+<% else %>
+	<h1>Please Login to take a Look at your Current Projects</h1>
+<% end %>

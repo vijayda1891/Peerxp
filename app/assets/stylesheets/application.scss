@@ -1,1 +1,34 @@
  @import "bootstrap";
+ @import "font-awesome";
+ /*
+ *= require jquery-ui
+ *= require bootstrap-datepicker
+ */
+
+
+.project_form {
+	padding: 10px;
+}
+
+.pro_list {
+	background: #e4e9f1;
+}
+
+.pro_list ul li {
+	padding: 10px;
+	list-style-type: none;
+	font-size: 20px;
+} 
+
+.custom_icon {
+	margin-right: 2%;
+	font-size: 20px;
+}
+
+.task_field {
+	padding: 10px;
+}
+
+.submit_field {
+	margin-top: 10px;
+}

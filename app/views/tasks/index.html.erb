@@ -1,0 +1,33 @@
+<div>
+	<center><b><h1> Tasks </h1></b></center>
+	<hr>
+	<%= form_for(@task, url: create_task_path(id: @project.id), validate: true, method: 'POST', :html => {:class => "form-horizontal", :autocomplete => "off", remote: true}) do |f| %>
+	<div class="row task_field">
+		<div class="col-sm-6">
+			<%= f.text_field :name, class: "form-control", placeholder: "Add Task" %>
+		</div>
+		<div class="col-sm-3">
+			<%= f.text_field :deadline, class: "form-control selector", placeholder: "Deadline" %>
+		</div>
+		<div class="col-sm-3">
+			<%= f.select(:priority, [["High", "high"], ["Low", "low"]], { include_blank: 'Select Priority'}, {:class => "form-control"}) %>
+		</div>	
+	</div>
+	<div class="submit_field">
+		<center><%= f.submit "Add Task", class: "btn btn-primary" %></center>
+	</div>
+	<% end %>
+	<b><hr></b>
+	<h4><b> Current Tasks </b></h4>
+	<div class="all_tasks">
+		<%= render @tasks %>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.selector').datepicker({  
+		format: 'DD-MM-YYYY'       
+	  });
+	});
+</script>
